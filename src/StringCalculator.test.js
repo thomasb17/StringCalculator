@@ -28,3 +28,10 @@ it("should return the sum of all numbers with a unknown amount in a string", () 
 it("should return the sum of the numbers in a string with a new line delimiter", () => {
 	expect(add("1\n2\n3")).toBe(6);
 });
+
+it("should return a exception with the negitive numbers in the string", () => {
+	function testNegative() {
+		add("-1,1,2,-3,-4");
+	}
+	expect(testNegative).toThrowError(/^Negatives not allowed: -1,-3,-4$/);
+});

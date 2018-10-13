@@ -5,10 +5,21 @@ function sum(numbers) {
 	if (numbers.includes("\n")) {
 		delimiter = "\n";
 	}
+
 	const numArr = numbers.split(delimiter);
-	let sum = 0;
+	let negativeNums = [];
+	let num, sum = 0;
 	for (let i = 0; i < numArr.length; ++i) {
-		sum += parseInt(numArr[i]);
+		num = parseInt(numArr[i]);
+		if (num < 0) {
+			negativeNums.push(num);
+			continue;
+		}
+		sum += num;
+	}
+
+	if (negativeNums.length > 0) {
+		throw new Error("Negatives not allowed: " + negativeNums);
 	}
 	return sum;
 }
