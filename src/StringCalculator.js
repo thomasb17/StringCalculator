@@ -11,6 +11,9 @@ function sum(numbers) {
 	let num, sum = 0;
 	for (let i = 0; i < numArr.length; ++i) {
 		num = parseInt(numArr[i]);
+		if (num > 1000) {
+			continue;
+		}
 		if (num < 0) {
 			negativeNums.push(num);
 			continue;

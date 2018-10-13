@@ -35,3 +35,7 @@ it("should return a exception with the negitive numbers in the string", () => {
 	}
 	expect(testNegative).toThrowError(/^Negatives not allowed: -1,-3,-4$/);
 });
+
+it("should return the sum of all numbers in the string excluding the numbers above 1000", () => {
+	expect(add("1000,1,2,2333,4444")).toBe(1003);
+});
