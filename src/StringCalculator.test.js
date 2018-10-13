@@ -39,3 +39,7 @@ it("should return a exception with the negitive numbers in the string", () => {
 it("should return the sum of all numbers in the string excluding the numbers above 1000", () => {
 	expect(add("1000,1,2,2333,4444")).toBe(1003);
 });
+
+it("should return the sum of the numbers in a string with a custom delimiter", () => {
+	expect(add("//k\n1k2k3")).toBe(6);
+});

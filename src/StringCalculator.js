@@ -2,7 +2,11 @@
 
 function sum(numbers) {
 	let delimiter = ",";
-	if (numbers.includes("\n")) {
+
+	if (numbers.includes("//")) {
+		delimiter = numbers.substring(numbers.lastIndexOf("//") + 2, numbers.lastIndexOf("\n"));
+		numbers = numbers.slice(numbers.lastIndexOf("\n") + 1);
+	} else if (numbers.includes("\n")) {
 		delimiter = "\n";
 	}
 
