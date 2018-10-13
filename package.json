@@ -1,0 +1,25 @@
+{
+  "name": "stringcalculator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "watch": "jest --watchAll",
+    "clean": "rm -rf node_modules",
+    "start": "node app"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thomasb17/StringCalculator.git"
+  },
+  "author": "Thomas Ari Bech",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/thomasb17/StringCalculator/issues"
+  },
+  "homepage": "https://github.com/thomasb17/StringCalculator#readme",
+  "devDependencies": {
+    "jest": "^23.6.0"
+  }
+}
