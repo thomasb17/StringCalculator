@@ -7,7 +7,11 @@ function add(numbers) {
 
 	const n = numbers.split(",");
 	if (n.length > 1) {
-		return parseInt(n[0]) + parseInt(n[1]);
+		let sum = 0;
+		for (let i = 0; i < n.length; ++i) {
+			sum += parseInt(n[i]);
+		};
+		return sum;
 	}
 
 	return parseInt(numbers);
