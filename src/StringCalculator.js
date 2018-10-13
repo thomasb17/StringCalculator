@@ -1,7 +1,11 @@
 // src/StringCalculator.js
 
 function sum(numbers) {
-	const numArr = numbers.split(",");
+	let delimiter = ",";
+	if (numbers.includes("\n")) {
+		delimiter = "\n";
+	}
+	const numArr = numbers.split(delimiter);
 	let sum = 0;
 	for (let i = 0; i < numArr.length; ++i) {
 		sum += parseInt(numArr[i]);

@@ -24,3 +24,7 @@ it("should return the sum of all numbers with a unknown amount in a string", () 
 	}
 	expect(add(str)).toBe(sum);
 });
+
+it("should return the sum of the numbers in a string with a new line delimiter", () => {
+	expect(add("1\n2\n3")).toBe(6);
+});
