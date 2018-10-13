@@ -1,20 +1,23 @@
 // src/StringCalculator.js
 
-function sum(numbers) {
+function getDelimiter(numbers) {
 	let delimiter = ",";
 
 	if (numbers.includes("//")) {
 		delimiter = numbers.substring(numbers.lastIndexOf("//") + 2, numbers.lastIndexOf("\n"));
-		numbers = numbers.slice(numbers.lastIndexOf("\n") + 1);
 	} else if (numbers.includes("\n")) {
 		delimiter = "\n";
 	}
 
-	const numArr = numbers.split(delimiter);
+	return delimiter;
+}
+
+function sum(numbers) {
 	let negativeNums = [];
 	let num, sum = 0;
-	for (let i = 0; i < numArr.length; ++i) {
-		num = parseInt(numArr[i]);
+
+	for (let i = 0; i < numbers.length; ++i) {
+		num = parseInt(numbers[i]);
 		if (num > 1000) {
 			continue;
 		}
@@ -36,7 +39,13 @@ function add(numbers) {
 		return 0;
 	}
 
-	return sum(numbers);
+	const delimiter = getDelimiter(numbers);
+
+	if (numbers.includes("//")) {
+		numbers = numbers.slice(numbers.lastIndexOf("\n") + 1);
+	}
+
+	return sum(numbers.split(delimiter));
 }
 
 module.exports = add;
